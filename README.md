@@ -1,0 +1,2 @@
+# MCBDD22_Bayes
+Please share a piece of code that visualizes the probability that Fred is indeed infected as the dependent variable, with the prevalence (1% in the example above, which takes any real-number value between 0.001% to 50%) and the specificity (99% in the example above, which takes values 99%, 99.9%, and 99.999%) as independent variables. For simplicity, we fix the sensitivity at 99%. Visualize the results if possible, and use integers to check and explain your results. Use any programming language that you prefer.
