@@ -1,6 +1,7 @@
 from random import seed
 import numpy as np
 import matplotlib.pyplot as plt
+import ctypes
 
 
 class Simulation:
@@ -50,4 +51,6 @@ if __name__ == '__main__':
     sim = Simulation(prevalence_min, prevalence_max, prevalence_inc, specitivity, sensitivity)
     sim.calculate()
     sim.show_plot()
+
+
 
