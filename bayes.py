@@ -20,9 +20,7 @@ class Simulation:
             result = []
             for prev in self.prevalence:
                 # P(infected | test positive)
-                p = (spec_i * prev) / (spec_i * prev + (1 - self.sens) * (1 - prev))
-                # P(infected | test negative)
-                p += ((1-self.sens) * prev) / (self.sens * (1-prev) + (1-self.sens) * prev)
+                p = (self.sens * prev) / ((1-spec_i) * (1-prev) + (self.sens) * (prev))
                 result.append(p)
             self.values.append(result)
 
@@ -37,7 +35,6 @@ class Simulation:
         plt.ylabel("P(inffected)")
         plt.legend()
         plt.show()
-
 
 
 if __name__ == '__main__':
