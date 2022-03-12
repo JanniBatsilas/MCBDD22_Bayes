@@ -1,6 +1,7 @@
 from random import seed
 import numpy as np
 import matplotlib.pyplot as plt
+import ctypes
 
 
 class Simulation:
@@ -33,6 +34,7 @@ class Simulation:
 
         plt.xlabel("prevalence")
         plt.ylabel("P(infected)")
+        plt.title("Fixed sensitivity of 0.99")
         plt.legend()
         plt.show()
 
@@ -50,5 +52,16 @@ if __name__ == '__main__':
     sim = Simulation(prevalence_min, prevalence_max, prevalence_inc, specitivity, sensitivity)
     sim.calculate()
     sim.show_plot()
+
+    ctypes.windll.user32.MessageBoxW(0, "Assuming we have tested 10'000 Persons and given sensitivity and specitivity "
+                                        "(99%) and a prevalence of 5%. \n "
+                                        "\n #PositiveDiseased = 0.99*500 = 495, "
+                                        "\n #NegativeNoDisease = 0.99*9500 = 9405 "
+                                        "\n #FN = 5"
+                                        "\n #FP = 95"
+                                        "\n P(infected | positive Test) = 495 / (495 + 95) = 0.84"
+                                        "\n The same value can be read from the plot seen before.", "Integer Calculation", 1)
+
+
 
 
