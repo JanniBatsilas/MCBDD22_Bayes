@@ -1,7 +1,6 @@
 from random import seed
 import numpy as np
 import matplotlib.pyplot as plt
-import ctypes
 
 
 class Simulation:
@@ -29,11 +28,11 @@ class Simulation:
     def show_plot(self):
 
         for i in range(len(self.spec)):
-            label_string = "Specitivity = " + str(self.spec[i])
+            label_string = "Specificity = " + str(self.spec[i])
             plt.plot(self.prevalence, self.values[i], label=label_string)
 
-        plt.xlabel("prevelance")
-        plt.ylabel("P(inffected)")
+        plt.xlabel("prevalence")
+        plt.ylabel("P(infected)")
         plt.legend()
         plt.show()
 
@@ -51,6 +50,5 @@ if __name__ == '__main__':
     sim = Simulation(prevalence_min, prevalence_max, prevalence_inc, specitivity, sensitivity)
     sim.calculate()
     sim.show_plot()
-
 
 
