@@ -46,10 +46,10 @@ if __name__ == '__main__':
     prevalence_max = 0.5
     prevalence_inc = prevalence_min
 
-    specitivity = [0.99, 0.999, 0.99999]
+    specificity = [0.99, 0.999, 0.99999]
     sensitivity = 0.99
 
-    sim = Simulation(prevalence_min, prevalence_max, prevalence_inc, specitivity, sensitivity)
+    sim = Simulation(prevalence_min, prevalence_max, prevalence_inc, specificity, sensitivity)
     sim.calculate()
     sim.show_plot()
 
@@ -60,7 +60,8 @@ if __name__ == '__main__':
                                         "\n #FN = 5"
                                         "\n #FP = 95"
                                         "\n P(infected | positive Test) = 495 / (495 + 95) = 0.84"
-                                        "\n The same value can be read from the plot seen before.", "Integer Calculation", 1)
+                                        "\n The same value can be read from the plot seen before.", "Integer "
+                                                                                                    "Calculation", 1)
 
 
 
